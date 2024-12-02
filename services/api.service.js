@@ -9,6 +9,8 @@ const getIcon = (icon) => {
             return '☼'
         case '03':
             return '☁'
+        case '50':
+            return '🌫'
     }
 };
 

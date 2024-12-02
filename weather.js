@@ -32,12 +32,12 @@ const saveCity = async (city) => {
 
 const getForecast = async () => {
     try {
-        const weather = await getWeather();
-        printWeather(weather, getIcon(weather.weather[0].icon));
+        const response = await getWeather();
+        printWeather(response, getIcon(response.weather[0].icon));
     } catch (e) {
-        if (e.response.status === 404) {
+        if (e.response?.status === 404) {
             printError('Invalid city');
-        } else if (e.response.status === 401) {
+        } else if (e.response?.status === 401) {
             printError('Invalid token');
         } else {
             printError(e.message);
@@ -46,16 +46,16 @@ const getForecast = async () => {
 };
 
 const initCLI = () => {
-    const { h,s,t } = getArgs(process.argv);
+    const { h,c,t } = getArgs(process.argv);
 
     if (h) {
         return printHelp();
     }
-    if (s) {
-        return saveCity(args.s);
+    if (c) {
+        return saveCity(c);
     }
     if (t) {
-        return saveToken(args.t);
+        return saveToken(t);
     }
 
     return getForecast();
