@@ -1,8 +1,9 @@
 import axios from 'axios';
 
-import { getKeyValue, TOKEN_DICTIONARY } from './storage.service.js';
+import { getKeyValue } from './storage.service.js';
+import { WEATHER_API_PATH, TOKEN_DICTIONARY } from "../constants/index.js";
 
-const getIcon = (icon) => {
+const getWeatherIcon = (icon) => {
     switch (icon.slice(0, -1)) {
         case '01':
             return '☀'
@@ -25,7 +26,7 @@ const getWeather = async () => {
         throw new Error('API key not set, set it by -t [API_KEY]');
     }
 
-    const { data } = await axios.get('https://api.openweathermap.org/data/2.5/weather', {
+    const { data } = await axios.get(WEATHER_API_PATH, {
         params: {
             q: city,
             appid: token,
@@ -39,5 +40,5 @@ const getWeather = async () => {
 
 export {
     getWeather,
-    getIcon,
+    getWeatherIcon,
 };

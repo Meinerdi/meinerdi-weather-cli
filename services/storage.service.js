@@ -2,21 +2,9 @@ import { homedir } from 'os';
 import { join } from 'path';
 import { promises } from 'fs';
 
+import { isFileExist } from "../helpers/index.js";
+
 const filePath = join(homedir(), 'weather-data-json');
-
-const TOKEN_DICTIONARY = {
-    token: 'token',
-    city: 'city'
-};
-
-const isFileExist = async (path) => {
-    try {
-        await promises.stat(path);
-        return true;
-    } catch (e) {
-        return false;
-    }
-};
 
 const saveKeyValue = async (key, value) => {
     let data = {};
@@ -44,5 +32,4 @@ const getKeyValue = async (key) => {
 export {
     saveKeyValue,
     getKeyValue,
-    TOKEN_DICTIONARY,
 };

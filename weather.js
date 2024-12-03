@@ -1,8 +1,7 @@
 #!/usr/bin/env node
-import { printHelp, printError, printSuccess, printWeather } from './services/log.service.js';
-import { saveKeyValue, TOKEN_DICTIONARY } from './services/storage.service.js';
-import { getIcon, getWeather } from './services/api.service.js';
-import { getArgs } from './helpers/args.js';
+import { printHelp, printError, printSuccess, printWeather, saveKeyValue, getWeatherIcon, getWeather } from './services/index.js';
+import { getCLIArgs } from './helpers/index.js';
+import { TOKEN_DICTIONARY } from "./constants/index.js";
 
 const saveToken = async (token) => {
     if (!token.length) {
@@ -33,7 +32,7 @@ const saveCity = async (city) => {
 const getForecast = async () => {
     try {
         const response = await getWeather();
-        printWeather(response, getIcon(response.weather[0].icon));
+        printWeather(response, getWeatherIcon(response.weather[0].icon));
     } catch (e) {
         if (e.response?.status === 404) {
             printError('Invalid city');
@@ -46,7 +45,7 @@ const getForecast = async () => {
 };
 
 const initCLI = () => {
-    const { h,c,t } = getArgs(process.argv);
+    const { h,c,t } = getCLIArgs(process.argv);
 
     if (h) {
         return printHelp();

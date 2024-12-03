@@ -1,4 +1,4 @@
-const getArgs = (args) => {
+const getCLIArgs = (args) => {
     const result = {};
     const [_executor, _file, ...rest] = args;
 
@@ -19,5 +19,5 @@ const getArgs = (args) => {
 };
 
 export {
-    getArgs,
+    getCLIArgs,
 };
