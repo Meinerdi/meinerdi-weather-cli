@@ -20,15 +20,11 @@ To install the CLI globally using npm, run:
 
 ### Get help
 
-Add flag:
-
 ```bash
     node weather -h
 ```
 
 ### Set city
-
-Add flag:
 
 ```bash
     node weather -c "city"
@@ -36,8 +32,6 @@ Add flag:
 
 ### Set token
 
-Add flag:
-
 ```bash
-    node weather -t TOKEN
+    node weather -t "token"
 ```
