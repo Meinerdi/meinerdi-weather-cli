@@ -8,7 +8,11 @@
   },
   "type": "module",
   "scripts": {
-    "start": "node weather.js"
+    "weather": "node weather.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Meinerdi/weather-cli.git"
   },
   "keywords": [
     "weather",
