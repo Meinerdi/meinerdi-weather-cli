@@ -1,6 +1,6 @@
 {
   "name": "meinerdi-weather-cli",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "Simple weather CLI utility",
   "main": "weather.js",
   "bin": {
@@ -8,8 +8,7 @@
   },
   "type": "module",
   "scripts": {
-    "start": "node weather.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node weather.js"
   },
   "keywords": [
     "weather",
