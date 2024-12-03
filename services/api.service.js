@@ -1,4 +1,5 @@
 import axios from 'axios';
+
 import { getKeyValue, TOKEN_DICTIONARY } from './storage.service.js';
 
 const getIcon = (icon) => {
