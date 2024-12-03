@@ -1,8 +1,9 @@
-# Weather CLI
+# Weather CLI 
 
 **Weather CLI** is a simple command-line tool for fetching weather forecasts.
 
 ## Installation
+https://www.npmjs.com/package/meinerdi-weather-cli
 
 To install the CLI globally using npm, run:
 
